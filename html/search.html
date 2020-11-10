@@ -1,0 +1,128 @@
+<ons-page id="searchPage">
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button component="button/menu">
+                <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">Aiki Sempai - Recherche</div>
+    </ons-toolbar>
+
+    <div class="content">
+        <ons-list>
+            <ons-list-header>Recherche par nom</ons-list-header>
+            <ons-list-item>
+                <ons-search-input id="search-text" modifier="material" placeholder="Ikkyo Ura"></ons-search-input>
+            </ons-list-item>
+
+            <ons-list-header>Recherche par critères</ons-list-header>
+
+            <ons-list-header nodivider>Type de technique</ons-list-header>
+            <ons-list-item>
+                <ons-select id="choose-waza">
+                    <option value=""></option>
+                    <option value="tachi_waza">Tachi waza</option>
+                    <option value="suwari_waza">Suwari waza</option>
+                    <option value="hanmi_handachi_waza">Hanmi handachi waza</option>
+                    <option value="ushiro_waza">Ushiro waza</option>
+                </ons-select>
+            </ons-list-item>
+
+            <ons-list-header nodivider>Attaque / Saisie</ons-list-header>
+            <ons-list-item>
+                <ons-select id="choose-attaque">
+                    <option value=""></option>
+                    <optgroup label="Saisies">
+                        <option value="aihanmi_katate_dori">Aihanmi katate dori</option>
+                        <option value="katate_dori">Katate dori</option>
+                        <option value="kata_dori">Kata dori</option>
+                        <option value="muna_dori">Muna dori</option>
+                        <option value="ryote_dori">Ryote dori</option>
+                        <option value="katate_ryote_dori">Katate ryote dori</option>
+                        <option value="ryo_kata_dori">Ryo kata dori</option>
+                    </optgroup>
+                    <optgroup label="Frappes">
+                        <option value="shomen_uchi">Shomen uchi</option>
+                        <option value="yokomen_uchi">Yokomen uchi</option>
+                        <option value="kata_dori_menuchi">Kata dori menuchi</option>
+
+                        <option value="chudan_tsuki">Chudan tsuki</option>
+                        <option value="jodan_tsuki">Jodan tsuki</option>
+                        <option value="mae_geri">Mae geri</option>
+                    </optgroup>
+                    <optgroup label="Ushiro">
+                        <option value="ushiro_eri_dori">Ushiro eri dori</option>
+                        <option value="ushiro_ryote_dori">Ushiro ryote dori</option>
+                        <option value="ushiro_ryo_kata_dori">Ushiro ryo kata dori</option>
+                        <option value="ushiro_hiji_dori">Ushiro hiji dori</option>
+                        <option value="ushiro_katate_kubishime">Ushiro katate kubishime</option>
+                    </optgroup>
+                </ons-select>
+            </ons-list-item>
+
+            <ons-list-header nodivider>Technique</ons-list-header>
+            <ons-list-item>
+                <ons-select id="choose-technique">
+                    <option value=""></option>
+                    <option value="ikkyo">Ikkyo</option>
+                    <option value="nikyo">Nikyo</option>
+                    <option value="sankyo">Sankyo</option>
+                    <option value="yonkyo">Yonkyo</option>
+                    <option value="gokyo">Gokyo</option>
+                    <option value="irimi_nage">Irimi nage</option>
+                    <option value="sokumen_irimi_nage">Sokumen irimi nage</option>
+                    <option value="shiho_nage">Shiho nage</option>
+                    <option value="kote_gaeshi">Kote gaeshi</option>
+                    <option value="ude_kime_nage">Ude kime nage</option>
+                    <option value="kaiten_nage">Kaiten nage</option>
+                    <option value="tenchi_nage">Tenchi nage</option>
+                    <option value="koshi_nage">Koshi nage</option>
+                    <option value="kokyu_nage">Kokyu nage</option>
+                    <option value="uchi_kaiten_sankyo">Uchi kaiten sankyo</option>
+                    <option value="aiki_otoshi">Aiki otoshi</option>
+                    <option value="hiji_kime_osae">Hiji kime osae</option>
+                    <option value="juji_garami">Juji garami</option>
+                    <option value="kokyu_ho">Kokyu ho</option>
+                    <option value="sumi_otoshi">Sumi otoshi</option>
+                    <option value="ushiro_kiri_otoshi">Ushiro kiri otoshi</option>
+                </ons-select>
+            </ons-list-item>
+
+            <ons-list-header nodivider>Kyu</ons-list-header>
+            <ons-list-item>
+                <ons-select id="choose-kyu">
+                    <option value=""></option>
+                    <option value="5">5e Kyu</option>
+                    <option value="4">4e Kyu</option>
+                    <option value="3">3e Kyu</option>
+                    <option value="2">2e Kyu</option>
+                    <option value="1">1er Kyu</option>
+                </ons-select>
+            </ons-list-item>
+
+            <ons-list-header nodivider>Filtre</ons-list-header>
+            <ons-list-item>
+                <label class="center" for="search-video-only">
+                    Avec vidéos
+                </label>
+                <div class="right">
+                    <ons-switch id="search-video-only" checked></ons-switch>
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <label class="center" for="include-kyus">
+                    Inclure les Kyus précédents
+                </label>
+                <div class="right">
+                    <ons-switch id="include-kyus"></ons-switch>
+                </div>
+            </ons-list-item>
+
+        </ons-list>
+
+        <ons-list id="search-results">
+            <ons-lazy-repeat id="search-results-list">
+        </ons-list>
+
+    </div>
+</ons-page>
