@@ -2,7 +2,7 @@
     "name": "Aiki Sempai",
     "start_url": "/aikisempai/index.html",
     "display": "standalone",
-    "background_color": "#FAF8F6",
+    "background_color": "#FFFFFF",
     "theme_color": "#6FC3E7",
     "description": "Aide mémoire des techniques d'aïkido",
     "icons": [
