@@ -73,6 +73,7 @@ my ( %waza, %attaques );
 
 open( my $tsv, "<:encoding(UTF-8)", "techniques.csv" ) or die "Cannot open tsv file: $!\n";
 
+my $i = 0;
 while (<$tsv>) {
     chomp;
     next unless /\S/;
@@ -82,7 +83,8 @@ while (<$tsv>) {
     my ( $waza, $attaque, $technique, $extra, $tag, $kyu_ffaaa, $kyu_ffab, $youtube ) =
       split( /,/, $_ );
 
-    print STDERR "$waza\t$attaque\t$technique\t$extra\n";
+    $i++;
+    print STDERR "$i\t$waza\t$attaque\t$technique\t$extra\n";
 
     $waza{$waza}++;
     $attaques{$attaque}++;
