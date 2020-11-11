@@ -10,6 +10,13 @@ myApp.controllers = {
             document.querySelector('#splitter').left.toggle();
         };
 
+        var checkIncludeKyu = function () {
+            var kyu = $('#choose-kyu').val();
+            $('#include-kyus').prop('disabled', function(i, v) { return !kyu; });
+        };
+        checkIncludeKyu();
+        page.querySelector('#choose-kyu').onchange = checkIncludeKyu;
+
         var infiniteList = page.querySelector('#search-results-list');
 
         var fixName = function (s) {
@@ -23,9 +30,9 @@ myApp.controllers = {
         var createListItem = function (c) {
             if (!c) {
                 if (!aikiCatalog.catalogue) {
-                    return ons.createElement('<ons-list-item><div class="noresults">Catalogue des techniques introuvable</div></ons-list-item>');
+                    return ons.createElement('<ons-list-item><div class="noresults">⚠️ Catalogue des techniques introuvable</div></ons-list-item>');
                 } else {
-                    return ons.createElement('<ons-list-item><div class="noresults">Aucun résultats</div></ons-list-item>');
+                    return ons.createElement('<ons-list-item><div class="noresults">🤷 Aucun résultats</div></ons-list-item>');
                 }
             }
 
