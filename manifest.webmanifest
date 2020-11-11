@@ -1,50 +1,36 @@
 {
-    "name": "Aiki Sempai - Aide-mémoire Aïkido",
-    "short_name": "Aiki Sempai",
+    "name": "Aiki Sempai",
     "start_url": "/aikisempai/index.html",
-    "display": "fullscreen",
+    "display": "standalone",
     "background_color": "#FAF8F6",
+    "theme_color": "#6FC3E7",
     "description": "Aide mémoire des techniques d'aïkido",
     "icons": [
-        {
-            "src": "img/ico/icon.36.png",
-            "sizes": "36x36",
-            "type": "image/png"
-        },
-        {
-            "src": "img/ico/icon.48.png",
-            "sizes": "48x48",
-            "type": "image/png"
-        },
-        {
-            "src": "img/ico/icon.72.png",
-            "sizes": "72x72",
-            "type": "image/png"
-        },
-        {
-            "src": "img/ico/icon.96.png",
-            "sizes": "96x96",
-            "type": "image/png"
-        },
-        {
-            "src": "img/ico/icon.120.png",
-            "sizes": "120x120",
-            "type": "image/png"
-        },
-        {
-            "src": "img/ico/icon.144.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        },
-        {
-            "src": "img/ico/icon.167.png",
-            "sizes": "167x167",
-            "type": "image/png"
-        },
-        {
-            "src": "img/ico/icon.192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
+        { "src": "/aikisempai/img/ico/icon.29.png", "sizes": "29x29", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.36.png", "sizes": "36x36", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.40.png", "sizes": "40x40", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.48.png", "sizes": "48x48", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.50.png", "sizes": "50x50", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.57.png", "sizes": "57x57", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.58.png", "sizes": "58x58", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.60.png", "sizes": "60x60", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.72.png", "sizes": "72x72", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.76.png", "sizes": "76x76", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.80.png", "sizes": "80x80", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.87.png", "sizes": "87x87", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.96.png", "sizes": "96x96", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.100.png", "sizes": "100x100", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.114.png", "sizes": "114x114", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.120.png", "sizes": "120x120", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.128.png", "sizes": "128x128", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.144.png", "sizes": "144x144", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.152.png", "sizes": "152x152", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.167.png", "sizes": "167x167", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.168.png", "sizes": "168x168", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.180.png", "sizes": "180x180", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.192.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.384.png", "sizes": "384x384", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.512.png", "sizes": "512x512", "type": "image/png" },
+        { "src": "/aikisempai/img/ico/icon.1024.png", "sizes": "1024x1024", "type": "image/png" }
     ]
 }
