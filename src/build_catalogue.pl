@@ -77,13 +77,12 @@ while (<$tsv>) {
     chomp;
     next unless /\S/;
     next if /^\s*#/;
+    next if /^(\s*,\s*)+$/;
 
     my ( $waza, $attaque, $technique, $extra, $tag, $kyu_ffaaa, $kyu_ffab, $youtube ) =
       split( /,/, $_ );
 
-    #$waza      = fix_name($waza);
-    #$attaque   = fix_name($attaque);
-    #$technique = fix_name($technique);
+    print STDERR "$waza\t$attaque\t$technique\t$extra\n";
 
     $waza{$waza}++;
     $attaques{$attaque}++;
@@ -119,6 +118,8 @@ while (<$tsv>) {
     } else {
         $kyu_ffab = JSON::null;
     }
+
+    $youtube =~ s/^\s*|\s*$//g;
 
     push(
         @{ $data->{catalogue} },
