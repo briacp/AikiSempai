@@ -4,6 +4,15 @@
  ***********************************************************************/
 
 myApp.controllers = {
+    homePage: function (page) {
+        // Set button functionality to open/close the menu.
+        page.querySelector('[component="button/menu"]').onclick = function () {
+            document.querySelector('#splitter').left.toggle();
+        };
+
+        // Change tabbar animation depending on platform.
+        //page.querySelector('#tabbar').setAttribute('animation', ons.platform.isAndroid() ? 'slide' : 'none');
+    },
 
     searchPage: function (page) {
         page.querySelector('[component="button/menu"]').onclick = function () {
@@ -12,7 +21,7 @@ myApp.controllers = {
 
         var checkIncludeKyu = function () {
             var kyu = $('#choose-kyu').val();
-            $('#include-kyus').prop('disabled', function(i, v) { return !kyu; });
+            $('#include-kyus').prop('disabled', function (i, v) { return !kyu; });
         };
         checkIncludeKyu();
         page.querySelector('#choose-kyu').onchange = checkIncludeKyu;
@@ -63,10 +72,10 @@ myApp.controllers = {
 
         var lastSearch = 'fullText';
 
-        var scrollToResults = function() {
-            document.getElementById("search-results").scrollIntoView({ 
-                behavior: 'smooth' 
-              });
+        var scrollToResults = function () {
+            document.getElementById("search-results").scrollIntoView({
+                behavior: 'smooth'
+            });
         };
 
         var searchFullText = function () {
@@ -75,7 +84,7 @@ myApp.controllers = {
 
             lastSearch = 'fullText';
 
-            console.log("searchFullText", search, withVideo)
+            //console.log("searchFullText", search, withVideo);
 
             var matches = [];
             if (aikiCatalog.catalogue) {
@@ -168,34 +177,10 @@ myApp.controllers = {
 
     },
 
-    prepaKyu: function (page) {
+    prepaKyuPage: function (page) {
         page.querySelector('[component="button/menu"]').onclick = function () {
             document.querySelector('#splitter').left.toggle();
         };
-
-        // 
-    },
-
-    //////////////////////////
-    // Tabbar Page Controller //
-    //////////////////////////
-    tabbarPage: function (page) {
-        // Set button functionality to open/close the menu.
-        page.querySelector('[component="button/menu"]').onclick = function () {
-            document.querySelector('#splitter').left.toggle();
-        };
-
-        // Set button functionality to push 'new_task.html' page.
-        Array.prototype.forEach.call(page.querySelectorAll('[component="button/new-task"]'), function (element) {
-            element.onclick = function () {
-                document.querySelector('#navigator').pushPage('html/new_task.html');
-            };
-
-            element.show && element.show(); // Fix ons-fab in Safari.
-        });
-
-        // Change tabbar animation depending on platform.
-        //page.querySelector('#tabbar').setAttribute('animation', ons.platform.isAndroid() ? 'slide' : 'none');
     },
 
     ////////////////////////
@@ -211,15 +196,14 @@ myApp.controllers = {
                 content.load($(this).attr('pagelink')).then(document.querySelector('#splitter').left.toggle());
             };
 
-            element.show && element.show(); // Fix ons-fab in Safari.
+            if (element.show) {
+                // Fix ons-fab in Safari.
+                element.show();
+            }
         });
-
-        // Set functionality for 'No Category' and 'All' default categories respectively.
-        //myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item[category-id=""]'));
-        //myApp.services.categories.bindOnCheckboxChange(page.querySelector('#default-category-list ons-list-item:not([category-id])'));
 
         // Change splitter animation depending on platform.
         document.querySelector('#splitter').left.setAttribute('animation', ons.platform.isAndroid() ? 'overlay' : 'reveal');
-    },
+    }
 
 };
