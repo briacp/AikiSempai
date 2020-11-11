@@ -22,11 +22,14 @@ myApp.controllers = {
 
         var createListItem = function (c) {
             if (!c) {
-                return ons.createElement('<ons-list-item>Pas de résultats</ons-list-item>');
+                if (!aikiCatalog.catalogue) {
+                    return ons.createElement('<ons-list-item><div class="noresults">Catalogue des techniques introuvable</div></ons-list-item>');
+                } else {
+                    return ons.createElement('<ons-list-item><div class="noresults">Aucun résultats</div></ons-list-item>');
+                }
             }
 
             var hasVideo = c.youtube;
-            //var important = c.important ? '' : '';
 
             var title = [fixName(c.attaque), fixName(c.technique), fixName(c.extra)].join(' ');
             var subtitle = fixName(c.waza) + (c.kyu[0] ? ' - ' + c.kyu[0] + (c.kyu[0] == 1 ? 'er' : 'e') + ' kyu' : '');
@@ -53,6 +56,12 @@ myApp.controllers = {
 
         var lastSearch = 'fullText';
 
+        var scrollToResults = function() {
+            document.getElementById("search-results").scrollIntoView({ 
+                behavior: 'smooth' 
+              });
+        };
+
         var searchFullText = function () {
             var search = $("#search-text").val().toLowerCase();
             var withVideo = document.querySelector('#search-video-only').checked;
@@ -61,9 +70,13 @@ myApp.controllers = {
 
             console.log("searchFullText", search, withVideo)
 
-            var matches = aikiCatalog.catalogue
-                .filter(it => !withVideo || (it.youtube && withVideo))
-                .filter(it => it.titre.toLowerCase().includes(search));
+            var matches = [];
+            if (aikiCatalog.catalogue) {
+
+                matches = aikiCatalog.catalogue
+                    .filter(it => !withVideo || (it.youtube && withVideo))
+                    .filter(it => it.titre.toLowerCase().includes(search));
+            }
 
             infiniteList.delegate = {
                 createItemContent: function (i) {
@@ -75,6 +88,7 @@ myApp.controllers = {
             };
 
             infiniteList.refresh();
+            scrollToResults();
         };
 
         var searchSwitches = function () {
@@ -89,24 +103,26 @@ myApp.controllers = {
 
             console.log("searchSwitches", waza, attaque, technique, kyu, withVideo, lowerKyus);
 
-            var matches = aikiCatalog.catalogue
-                .filter(it => !withVideo || (it.youtube && withVideo))
-                .filter(it =>
-                    // Pas de Kyu choisi
-                    !kyu || 
-                    // Kyu choisi, mais la technique n'en precise pas
-                    !(kyu && it.kyu[0] != null) || 
-                    // Se limiter au Kyu choisi
-                    (!lowerKyus && it.kyu[0] && kyu == it.kyu[0]) ||
-                    // Inclure les Kyus inférieurs
-                    (lowerKyus && it.kyu[0] != null && kyu <= it.kyu[0])
-                )
-                .filter(it => 
-                    (!waza || it.waza == waza) &&
-                    (!technique || it.technique == technique) &&
-                    (!attaque || it.attaque == attaque)
-                );
-
+            var matches = [];
+            if (aikiCatalog.catalogue) {
+                matches = aikiCatalog.catalogue
+                    .filter(it => !withVideo || (it.youtube && withVideo))
+                    .filter(it =>
+                        // Pas de Kyu choisi
+                        !kyu ||
+                        // Kyu choisi, mais la technique n'en precise pas
+                        !(kyu && it.kyu[0] != null) ||
+                        // Se limiter au Kyu choisi
+                        (!lowerKyus && it.kyu[0] && kyu == it.kyu[0]) ||
+                        // Inclure les Kyus inférieurs
+                        (lowerKyus && it.kyu[0] != null && kyu <= it.kyu[0])
+                    )
+                    .filter(it =>
+                        (!waza || it.waza == waza) &&
+                        (!technique || it.technique == technique) &&
+                        (!attaque || it.attaque == attaque)
+                    );
+            }
             //matches.forEach(it => console.log(it.name));
 
             infiniteList.delegate = {
@@ -119,6 +135,7 @@ myApp.controllers = {
             };
 
             infiniteList.refresh();
+            scrollToResults();
         };
 
         page.querySelector('#search-text').onchange = searchFullText;
