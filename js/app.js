@@ -1,6 +1,7 @@
 window.myApp = {
-  CATALOG_URL: "https://avironbayonnaisaikido.org/aikisempai/data/aikido_catalogue.json"
+  //CATALOG_URL: "https://avironbayonnaisaikido.org/aikisempai/data/aikido_catalogue.json"
   //CATALOG_URL: "http://localhost/aikisempai/data/aikido_catalogue.json"
+  CATALOG_URL: "https://briacp.github.io/AikiSempai/data/aikido_catalogue.json"
 };
 
 window.aikiCatalog = {};
