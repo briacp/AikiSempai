@@ -19,7 +19,7 @@ my $data = {};
 
 # Tri des attaques dans le même ordre
 my %attaques_sort = (
-    aihanmi_katate_dori     => 1,
+    ai_hanmi_katate_dori    => 1,
     katate_dori             => 2,
     kata_dori               => 3,
     muna_dori               => 4,
