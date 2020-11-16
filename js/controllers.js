@@ -10,6 +10,15 @@ myApp.controllers = {
             document.querySelector('#splitter').left.toggle();
         };
 
+
+        if (aikiCatalog.catalogue) {
+            var videos = aikiCatalog.catalogue
+                .filter( i => i.youtube )
+                .map( i => i.youtube )
+                .filter( (value, index, self) => self.indexOf(value) === index ).length;
+            $(document.querySelector('#catalog-info')).text( aikiCatalog.catalogue.length + " techniques référencées - " + videos + " vidéos");
+        }
+
         // Change tabbar animation depending on platform.
         //page.querySelector('#tabbar').setAttribute('animation', ons.platform.isAndroid() ? 'slide' : 'none');
     },
@@ -18,6 +27,8 @@ myApp.controllers = {
         page.querySelector('[component="button/menu"]').onclick = function () {
             document.querySelector('#splitter').left.toggle();
         };
+
+        $(document.querySelector("#search-results-title")).hide();
 
         var checkIncludeKyu = function () {
             var kyu = $('#choose-kyu').val();
@@ -32,7 +43,7 @@ myApp.controllers = {
             if (!s) {
                 return '';
             }
-            s = s.replace(/_/g, ' ').replace(/ai\s*hanmi/, 'ai-hanmi');
+
             return s.charAt(0).toUpperCase() + s.slice(1);
         };
 
@@ -60,7 +71,7 @@ myApp.controllers = {
                 '<span class="list-item__subtitle">', subtitle, '</span>',
                 '</div>',
                 '<div class="right">',
-                (c.important ? '<span class="notification">!</span>' : ''),
+                (c.important ? '<span class="notification" title="Technique importante">!</span>' : ''),
                 (hasVideo ?
                     '<ons-icon icon="md-play" class="list-item__icon"></ons-icon>' :
                     ''
@@ -94,6 +105,8 @@ myApp.controllers = {
                     .filter(it => it.titre.toLowerCase().includes(search));
             }
 
+            updateSearchTitle(matches);
+
             infiniteList.delegate = {
                 createItemContent: function (i) {
                     return createListItem(matches[i]);
@@ -115,9 +128,11 @@ myApp.controllers = {
             var withVideo = document.querySelector('#search-video-only').checked;
             var lowerKyus = document.querySelector('#include-kyus').checked;
 
+            // TODO handle soto_kaiten_nage / uchi_kaiten_nage / kaiten_nage as 1 technique
+
             lastSearch = 'switches';
 
-            console.log("searchSwitches", waza, attaque, technique, kyu, withVideo, lowerKyus);
+            //console.log("searchSwitches", waza, attaque, technique, kyu, withVideo, lowerKyus);
 
             var matches = [];
             if (aikiCatalog.catalogue) {
@@ -141,6 +156,8 @@ myApp.controllers = {
             }
             //matches.forEach(it => console.log(it.name));
 
+            updateSearchTitle(matches);
+
             infiniteList.delegate = {
                 createItemContent: function (i) {
                     return createListItem(matches[i]);
@@ -152,6 +169,13 @@ myApp.controllers = {
 
             infiniteList.refresh();
             scrollToResults();
+        };
+
+        var updateSearchTitle = function(matches) {
+            searchResultsTitle = $(document.querySelector("#search-results-title"));
+            var size = matches.length;
+            searchResultsTitle.text( size == 0 ? "Aucune technique trouvée" : size > 1 ? size + " techniques" : "Une technique" );
+            searchResultsTitle.show();
         };
 
         page.querySelector('#search-text').onchange = searchFullText;
