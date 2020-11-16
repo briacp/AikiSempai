@@ -57,16 +57,18 @@ my %tech_sort = (
     kote_gaeshi        => 9,
     ude_kime_nage      => 10,
     kaiten_nage        => 11,
-    tenchi_nage        => 12,
-    koshi_nage         => 13,
-    kokyu_nage         => 14,
-    uchi_kaiten_sankyo => 15,
-    aiki_otoshi        => 16,
-    hiji_kime_osae     => 17,
-    juji_garami        => 18,
-    kokyu_ho           => 19,
-    sumi_otoshi        => 20,
-    ushiro_kiri_otoshi => 21,
+    uchi_kaiten_nage   => 12,
+    soto_kaiten_nage   => 13,
+    tenchi_nage        => 14,
+    koshi_nage         => 15,
+    kokyu_nage         => 16,
+    uchi_kaiten_sankyo => 17,
+    aiki_otoshi        => 18,
+    hiji_kime_osae     => 19,
+    juji_garami        => 20,
+    kokyu_ho           => 21,
+    sumi_otoshi        => 22,
+    ushiro_kiri_otoshi => 23,
 );
 
 my ( %waza, %attaques );
@@ -77,11 +79,13 @@ my $i = 0;
 while (<$tsv>) {
     chomp;
     next unless /\S/;
-    next if /^\s*#/;
+    next if /^\s*"?\s*#/;
     next if /^(\s*,\s*)+$/;
 
     my ( $waza, $attaque, $technique, $extra, $tag, $kyu_ffaaa, $kyu_ffab, $youtube ) =
       split( /,/, $_ );
+
+    next unless $waza && $attaque && $technique;
 
     $i++;
     print STDERR "$i\t$waza\t$attaque\t$technique\t$extra\n";
