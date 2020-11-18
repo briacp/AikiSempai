@@ -44,6 +44,8 @@ myApp.controllers = {
                 return '';
             }
 
+            s = s.replace(/_/g, ' ');
+
             return s.charAt(0).toUpperCase() + s.slice(1);
         };
 
@@ -58,7 +60,7 @@ myApp.controllers = {
 
             var hasVideo = c.youtube;
 
-            var title = [fixName(c.attaque), fixName(c.technique), fixName(c.extra)].join(' ');
+            var title = [fixName(c.attaque), fixName(c.technique), fixName(c.extra)].join(' <span style="color:#EDEDED">/</span> ');
             var subtitle = fixName(c.waza) + (c.kyu[0] ? ' - ' + c.kyu[0] + (c.kyu[0] == 1 ? 'er' : 'e') + ' kyu' : '');
 
             return ons.createElement([
