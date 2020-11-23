@@ -4,15 +4,15 @@
 # Grades Kyus:,,,,,,,,
 #   http://telechargement.ffaaa.com/ffaaa/aikido-ffaaa-guide-debutant.pdf,,,,,,,,
 #   https://www.ffabaikido.fr/fr/grades-kyu-100.html,,,,,,,,
-"# =MAJUSCULE(GAUCHE(A14)) & SUBSTITUE(STXT(A14;2;NBCAR(A14));""_"";"" "") & "" - "" &     MAJUSCULE(GAUCHE(B14)) & SUBSTITUE(STXT(B14;2;NBCAR(B14));""_"";"" "") & "" - "" &     MAJUSCULE(GAUCHE(C14)) & SUBSTITUE(STXT(C14;2;NBCAR(C14));""_"";"" "") &      SI(ESTVIDE(D14); """"; "" - "" &         MAJUSCULE(GAUCHE(D14)) & SUBSTITUE(STXT(D14;2;NBCAR(D14));""_"";"" "")     )",,,,,,,,
+,,,,,,,,
 ,,,,,,,,
 # SUWARI WAZA -------------------------------------------------------------------------------------,,,,,,,,
 ,,,,,,,,
-# K: Seulement pour les passages Kyu (pas demandée pour les Dans),,,,,,,,
+# K: Seulement pour les passages Kyu (pas demandee pour les Dans),,,,,,,,
 # S: Technique prioritaire,,,,,,,,
 ,,,,,,,,
 suwari_waza,ai_hanmi_katate_dori,ikkyo,omote,K,4,5,,46524
-suwari_waza,ai_hanmi_katate_dori,ikkyo,ura,K,4,5,,47545
+suwari_waza,ai_hanmi_katate_dori,ikkyo,ura,,4,5,,47545
 suwari_waza,ai_hanmi_katate_dori,nikyo,omote,K,,4,,
 suwari_waza,ai_hanmi_katate_dori,nikyo,ura,K,,4,,
 suwari_waza,ai_hanmi_katate_dori,sankyo,omote,K,,4,,
@@ -37,19 +37,19 @@ suwari_waza,shomen_uchi,yonkyo,ura,,3,,zwrrdlfrVlw,82448
 suwari_waza,shomen_uchi,gokyo,,,1,,GGbs1NQZCmA,45707
 suwari_waza,shomen_uchi,irimi_nage,,S,4,5,,51559
 suwari_waza,shomen_uchi,kote_gaeshi,,,3,4,93vLsKDm8RY,83604
-suwari_waza,shomen_uchi,kokyu_nage,,,2,,,
+suwari_waza,shomen_uchi,kokyu_nage,,,2,,66clHPkU7Jk,
 ,,,,,,,,
-suwari_waza,yokomen_uchi,ikkyo,omote,S,2,2,j45HRJGku-4,68476
-suwari_waza,yokomen_uchi,ikkyo,ura,S,2,2,I0hyTpQ0ITc,69648
-suwari_waza,yokomen_uchi,nikyo,omote,,2,2,IJ3Bnh2u7Qw,70617
-suwari_waza,yokomen_uchi,nikyo,ura,,2,2,Inbt1vdsCkQ,72184
-suwari_waza,yokomen_uchi,sankyo,omote,,2,2,xs7kAejoG1o,74119
-suwari_waza,yokomen_uchi,sankyo,ura,,2,2,wnzsSGmJ7JQ,75813
-suwari_waza,yokomen_uchi,yonkyo,omote,,2,2,jCdZM9D0yMc,77445
-suwari_waza,yokomen_uchi,yonkyo,ura,,2,2,cT2z-s0LFJg,78648
-suwari_waza,yokomen_uchi,gokyo,,,2,,yXECN2705dk,79977
-suwari_waza,yokomen_uchi,irimi_nage,1re forme,,2,2,DIo9fzKnEIQ,81200
-suwari_waza,yokomen_uchi,irimi_nage,2e forme,,2,2,jJjY3e1C6lY,82445
+suwari_waza,yokomen_uchi,ikkyo,omote,S,2,2,tLjZTWWhQek,68476
+suwari_waza,yokomen_uchi,ikkyo,ura,S,2,2,j45HRJGku-4,69648
+suwari_waza,yokomen_uchi,nikyo,omote,,2,2,I0hyTpQ0ITc,70617
+suwari_waza,yokomen_uchi,nikyo,ura,,2,2,IJ3Bnh2u7Qw,72184
+suwari_waza,yokomen_uchi,sankyo,omote,,2,2,Inbt1vdsCkQ,74119
+suwari_waza,yokomen_uchi,sankyo,ura,,2,2,xs7kAejoG1o,75813
+suwari_waza,yokomen_uchi,yonkyo,omote,,2,2,wnzsSGmJ7JQ,77445
+suwari_waza,yokomen_uchi,yonkyo,ura,,2,2,jCdZM9D0yMc,78648
+suwari_waza,yokomen_uchi,gokyo,,,2,,cT2z-s0LFJg,79977
+suwari_waza,yokomen_uchi,irimi_nage,1re forme,,2,2,yXECN2705dk,81200
+suwari_waza,yokomen_uchi,irimi_nage,2e forme,,2,2,DIo9fzKnEIQ,82445
 suwari_waza,yokomen_uchi,kote_gaeshi,1re forme,S,1,2,32Ur5Bln1M4,42761
 suwari_waza,yokomen_uchi,kote_gaeshi,2e forme,S,1,2,_cYBuMJ4f8o,44227
 suwari_waza,yokomen_uchi,kokyu_nage,,,2,,,
@@ -58,18 +58,18 @@ suwari_waza,kata_dori,ikkyo,omote,,3,4,dVG8DkFo01g,69391
 suwari_waza,kata_dori,ikkyo,ura,,3,4,AXO9NDydUEE,71105
 suwari_waza,kata_dori,nikyo,omote,,3,4,kbc5ouinc1M,72407
 suwari_waza,kata_dori,nikyo,ura,,3,4,EOkOPABixnc,74017
-suwari_waza,kata_dori,sankyo,omote,K,2,,HHMxD7u-03U,83518
-suwari_waza,kata_dori,sankyo,ura,K,2,,3Og_NEvdCMk,84962
+suwari_waza,kata_dori,sankyo,omote,K,2,,jJjY3e1C6lY,83518
+suwari_waza,kata_dori,sankyo,ura,K,2,,HHMxD7u-03U,84962
 ,,,,,,,,
 suwari_waza,ryote_dori,ikkyo,omote,K,3,1,,
 suwari_waza,ryote_dori,ikkyo,ura,K,3,1,,
-suwari_waza,ryote_dori,kote_gaeshi,,K,2,,kCM5m9dn_e4,86485
-suwari_waza,ryote_dori,irimi_nage,,K,2,,4NrYj6QJn2Y,87216
+suwari_waza,ryote_dori,kote_gaeshi,,K,2,,3Og_NEvdCMk,86485
+suwari_waza,ryote_dori,irimi_nage,,K,2,,kCM5m9dn_e4,87216
 ,,,,,,,,
-suwari_waza,ryo_kata_dori,ikkyo,omote,K,2,1,SOVLAnbLc0g,63183
-suwari_waza,ryo_kata_dori,ikkyo,ura,K,2,1,2EI6gtN5d1c,64303
-suwari_waza,ryo_kata_dori,nikyo,omote,K,2,,Ux0eI0NWCxw,65389
-suwari_waza,ryo_kata_dori,nikyo,ura,K,2,,tLjZTWWhQek,66857
+suwari_waza,ryo_kata_dori,ikkyo,omote,K,2,1,8qYxX20XYt0,63183
+suwari_waza,ryo_kata_dori,ikkyo,ura,K,2,1,SOVLAnbLc0g,64303
+suwari_waza,ryo_kata_dori,nikyo,omote,K,2,,2EI6gtN5d1c,65389
+suwari_waza,ryo_kata_dori,nikyo,ura,K,2,,Ux0eI0NWCxw,66857
 ,,,,,,,,
 # HANMI HANDACHI WAZA -----------------------------------------------------------------------------,,,,,,,,
 ,,,,,,,,
@@ -82,14 +82,14 @@ hanmi_handachi_waza,katate_dori,kote_gaeshi,,,1,1,,
 hanmi_handachi_waza,katate_dori,shiho_nage,omote,S,3,3,Yt3n2s1QLgs,85164
 hanmi_handachi_waza,katate_dori,shiho_nage,ura,S,3,3,K36pLSvSCAg,85757
 hanmi_handachi_waza,katate_dori,uchi_kaiten_nage,omote,,3,1,Hz4OqFkkTLs,86642
-hanmi_handachi_waza,katate_dori,uchi_kaiten_nage,ura,,2,1,66clHPkU7Jk,92256
+hanmi_handachi_waza,katate_dori,uchi_kaiten_nage,ura,,2,1,xZmDkD98ZIg,92256
 hanmi_handachi_waza,katate_dori,soto_kaiten_nage,ura,,3,1,FpaNHPtNfiU,87634
-hanmi_handachi_waza,katate_dori,soto_kaiten_nage,omote,,2,1,xZmDkD98ZIg,91324
+hanmi_handachi_waza,katate_dori,soto_kaiten_nage,omote,,2,1,O-Kf2tRlJVQ,91324
 hanmi_handachi_waza,katate_dori,sumi_otoshi,,K,,1,,
 hanmi_handachi_waza,katate_dori,kokyu_nage,,,1,,,
 ,,,,,,,,
-hanmi_handachi_waza,ryote_dori,shiho_nage,ura,,2,2,O-Kf2tRlJVQ,90500
-hanmi_handachi_waza,ryote_dori,shiho_nage,omote,,2,2,OnoAuVASJeA,89675
+hanmi_handachi_waza,ryote_dori,shiho_nage,ura,,2,2,OnoAuVASJeA,90500
+hanmi_handachi_waza,ryote_dori,shiho_nage,omote,,2,2,CCxsqcH_eSE,89675
 hanmi_handachi_waza,ryote_dori,kokyu_nage,,,1,2,,
 ,,,,,,,,
 hanmi_handachi_waza,ushiro_ryo_kata_dori,ikkyo,omote,S,1,2,,
@@ -107,7 +107,7 @@ hanmi_handachi_waza,shomen_uchi,nikyo,omote,K,1,,UJnJDzvdFmw,48075
 hanmi_handachi_waza,shomen_uchi,nikyo,ura,K,1,,qiTU8WvFKnQ,49332
 hanmi_handachi_waza,shomen_uchi,gokyo,,K,1,,tLcvZCqAoa4,51158
 hanmi_handachi_waza,shomen_uchi,irimi_nage,,K,3,1,BZxPDMo5uGk,88534
-hanmi_handachi_waza,shomen_uchi,kote_gaeshi,,K,2,,CCxsqcH_eSE,88454
+hanmi_handachi_waza,shomen_uchi,kote_gaeshi,,K,2,,4NrYj6QJn2Y,88454
 ,,,,,,,,
 # TACHI WAZA --------------------------------------------------------------------------------------,,,,,,,,
 tachi_waza,ai_hanmi_katate_dori,ikkyo,omote,S,5,5,,778
@@ -209,12 +209,12 @@ tachi_waza,katate_ryote_dori,juji_garami,,S,1,2,oHshlMl1TY8,33055
 tachi_waza,katate_ryote_dori,kokyu_nage,,,2,,,
 ,,,,,,,,
 tachi_waza,chudan_tsuki,ikkyo,omote,,2,3,2sCtTfQyMnM,53769
-tachi_waza,chudan_tsuki,ikkyo,ura,,2,3,mmj2GDJ5pOY,54814
+tachi_waza,chudan_tsuki,ikkyo,ura,,2,3,p6vJDx1P7E4,54509
 tachi_waza,chudan_tsuki,nikyo,omote,K,1,,6WjbKE8d8ZE,19070
 tachi_waza,chudan_tsuki,nikyo,ura,K,1,,K0Is9V1coCI,20233
 tachi_waza,chudan_tsuki,sankyo,omote,K,1,,D_g_ytqnSnQ,21636
 tachi_waza,chudan_tsuki,sankyo,ura,K,1,,TYNTXLKfISo,23143
-tachi_waza,chudan_tsuki,irimi_nage,,,2,3,xObwiYjqObc,55492
+tachi_waza,chudan_tsuki,irimi_nage,,,2,3,mmj2GDJ5pOY,55492
 tachi_waza,chudan_tsuki,kote_gaeshi,,S,1,3,nLk0tStfdyk,24470
 tachi_waza,chudan_tsuki,ude_kime_nage,,,1,,,
 tachi_waza,chudan_tsuki,uchi_kaiten_nage,omote,,1,3,QACcBjOdEL0,25690
@@ -245,7 +245,7 @@ tachi_waza,jodan_tsuki,koshi_nage,,,1,,,
 tachi_waza,jodan_tsuki,kokyu_nage,,,2,,,
 tachi_waza,jodan_tsuki,uchi_kaiten_sankyo,omote,,1,,,
 tachi_waza,jodan_tsuki,uchi_kaiten_sankyo,ura,,1,,,
-tachi_waza,jodan_tsuki,hiji_kime_osae,,K,2,,6p7XJsAYTuk,56341
+tachi_waza,jodan_tsuki,hiji_kime_osae,,K,2,,xObwiYjqObc,56341
 ,,,,,,,,
 tachi_waza,shomen_uchi,ikkyo,omote,S,5,5,,9787
 tachi_waza,shomen_uchi,ikkyo,ura,S,5,5,,10777
@@ -265,7 +265,7 @@ tachi_waza,shomen_uchi,soto_kaiten_nage,omote,,2,2,HxJAFwYcTQo,43140
 tachi_waza,shomen_uchi,uchi_kaiten_nage,ura,,2,2,pSbHX33S4Dg,45381
 tachi_waza,shomen_uchi,soto_kaiten_nage,ura,,2,2,Y0DVssTFl_g,43777
 tachi_waza,shomen_uchi,koshi_nage,,K,,2,,
-tachi_waza,shomen_uchi,kokyu_nage,,,2,,p6vJDx1P7E4,54509
+tachi_waza,shomen_uchi,kokyu_nage,,,2,,,54814
 tachi_waza,shomen_uchi,uchi_kaiten_sankyo,omote,,1,4,,
 tachi_waza,shomen_uchi,uchi_kaiten_sankyo,ura,,1,4,,
 ,,,,,,,,
@@ -303,7 +303,7 @@ tachi_waza,kata_dori_menuchi,ude_kime_nage,ura,,1,2,,
 tachi_waza,kata_dori_menuchi,koshi_nage,,S,1,,,
 tachi_waza,kata_dori_menuchi,kokyu_nage,,,2,,,
 ,,,,,,,,
-tachi_waza,mae_ryo_kata_dori,sokumen_irimi_nage,,K,2,,8qYxX20XYt0,59913
+tachi_waza,mae_ryo_kata_dori,sokumen_irimi_nage,,K,2,,v_qNnKxHUYM,59913
 ,,,,,,,,
 tachi_waza,mae_geri,irimi_nage,,K,,1,,
 ,,,,,,,,
@@ -350,8 +350,8 @@ ushiro_waza,ushiro_eri_dori,shiho_nage,omote,,1,,mRxxhpesDlA,6105
 ushiro_waza,ushiro_eri_dori,tenchi_nage,,,,,,
 ushiro_waza,ushiro_eri_dori,kokyu_nage,,,2,1,,
 ,,,,,,,,
-ushiro_waza,ushiro_hiji_dori,ikkyo,omote,K,2,,oXHP1A_co2s,57205
-ushiro_waza,ushiro_hiji_dori,ikkyo,ura,K,2,,v_qNnKxHUYM,58584
+ushiro_waza,ushiro_hiji_dori,ikkyo,omote,K,2,,6p7XJsAYTuk,57205
+ushiro_waza,ushiro_hiji_dori,ikkyo,ura,K,2,,oXHP1A_co2s,58584
 ,,,,,,,,
 ushiro_waza,ushiro_katate_kubishime,ikkyo,omote,,,4,,
 ushiro_waza,ushiro_katate_kubishime,ikkyo,ura,,,4,,
