@@ -60,7 +60,10 @@ myApp.controllers = {
 
             var hasVideo = c.youtube;
 
-            var title = [fixName(c.attaque), fixName(c.technique), fixName(c.extra)].join(' <span style="color:#EDEDED">/</span> ');
+            var title = [fixName(c.attaque), fixName(c.technique), fixName(c.extra)]
+                .filter( i=> i )
+                .join(' <span class="separator">/</span> ');
+
             var subtitle = fixName(c.waza) + (c.kyu[0] ? ' - ' + c.kyu[0] + (c.kyu[0] == 1 ? 'er' : 'e') + ' kyu' : '');
 
             return ons.createElement([
