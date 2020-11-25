@@ -64,7 +64,7 @@ myApp.controllers = {
                 .filter( i=> i )
                 .join(' <span class="separator">/</span> ');
 
-            var subtitle = fixName(c.waza) + (c.kyu[0] ? ' - ' + c.kyu[0] + (c.kyu[0] == 1 ? 'er' : 'e') + ' kyu' : '');
+            var subtitle = fixName(c.waza) + (c.kyu ? ' - ' + c.kyu + (c.kyu == 1 ? 'er' : 'e') + ' kyu' : '');
 
             return ons.createElement([
                 '<ons-list-item', (hasVideo ? ' tappable onclick="myApp.services.video.play(\'' + c.youtube + '\')"' : ''), '>',
@@ -147,11 +147,11 @@ myApp.controllers = {
                         // Pas de Kyu choisi
                         !kyu ||
                         // Kyu choisi, mais la technique n'en precise pas
-                        !(kyu && it.kyu[0] != null) ||
+                        !(kyu && it.kyu != null) ||
                         // Se limiter au Kyu choisi
-                        (!lowerKyus && it.kyu[0] && kyu == it.kyu[0]) ||
+                        (!lowerKyus && it.kyu && kyu == it.kyu) ||
                         // Inclure les Kyus inférieurs
-                        (lowerKyus && it.kyu[0] != null && kyu <= it.kyu[0])
+                        (lowerKyus && it.kyu != null && kyu <= it.kyu)
                     )
                     .filter(it =>
                         (!waza || it.waza == waza) &&

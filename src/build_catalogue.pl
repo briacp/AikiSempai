@@ -75,6 +75,9 @@ my ( %waza, %attaques );
 
 open( my $tsv, "<:encoding(UTF-8)", "techniques.csv" ) or die "Cannot open tsv file: $!\n";
 
+open( my $yt_list, ">:encoding(UTF-8)", "youtube_list.tsv" ) or die "Cannot open tsv file: $!\n";
+
+
 my $i = 0;
 while (<$tsv>) {
     chomp;
@@ -82,10 +85,13 @@ while (<$tsv>) {
     next if /^\s*"?\s*#/;
     next if /^(\s*,\s*)+$/;
 
-    my ( $waza, $attaque, $technique, $extra, $tag, $kyu_ffaaa, $kyu_ffab, $youtube ) =
+    my ( $waza, $attaque, $technique, $extra, $tag, $kyu_ffaaa, $youtube, $start_frame, $end_frame, $index ) =
       split( /,/, $_ );
 
     next unless $waza && $attaque && $technique;
+    next unless $kyu_ffaaa;
+
+    my $kyu_ffab = undef;
 
     $i++;
     print STDERR "$i\t$waza\t$attaque\t$technique\t$extra\n";
@@ -118,7 +124,6 @@ while (<$tsv>) {
         $kyu_ffaaa = JSON::null;
     }
 
-
     if ($kyu_ffab) {
         $kyu_ffab += 0;
     } else {
@@ -139,10 +144,13 @@ while (<$tsv>) {
             youtube    => $youtube || JSON::null,
             titre      => $titre,
             important  => $tag eq 'S' ? JSON::true : JSON::false,
-            kyu => [ $kyu_ffaaa, $kyu_ffab ],
+            #kyu => [ $kyu_ffaaa, $kyu_ffab ],
+            kyu => $kyu_ffaaa,
             only_kyu => $tag eq 'K' ? JSON::true : JSON::false,
         }
     );
+
+    print $yt_list "$youtube\t$titre\n" if $youtube;
 
 =pod
 
