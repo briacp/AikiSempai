@@ -3,13 +3,27 @@
  * App Controllers. These controllers will be called on page initialization. *
  ***********************************************************************/
 
-myApp.controllers = {
+AikiSempai.controllers = {
     homePage: function (page) {
         // Set button functionality to open/close the menu.
         page.querySelector('[component="button/menu"]').onclick = function () {
             document.querySelector('#splitter').left.toggle();
         };
 
+        Array.prototype.forEach.call(page.querySelectorAll('[pagelink]'), function (element) {
+            element.onclick = function () {
+                var content = document.getElementById('content');
+                content.load($(this).attr('pagelink'));
+            };
+        });
+
+    },
+
+    aboutPage: function (page) {
+        // Set button functionality to open/close the menu.
+        page.querySelector('[component="button/menu"]').onclick = function () {
+            document.querySelector('#splitter').left.toggle();
+        };
 
         if (aikiCatalog.catalogue) {
             var videos = aikiCatalog.catalogue
@@ -18,9 +32,64 @@ myApp.controllers = {
                 .filter( (value, index, self) => self.indexOf(value) === index ).length;
             $(document.querySelector('#catalog-info')).text( aikiCatalog.catalogue.length + " techniques référencées - " + videos + " vidéos");
         }
+    },
 
-        // Change tabbar animation depending on platform.
-        //page.querySelector('#tabbar').setAttribute('animation', ons.platform.isAndroid() ? 'slide' : 'none');
+    weeklyPage: function (page) {
+        //AikiSempai.services.utils.setupMenu(page);
+
+        // Set button functionality to open/close the menu.
+        page.querySelector('[component="button/menu"]').onclick = function () {
+            document.querySelector('#splitter').left.toggle();
+        };
+
+        if (!weeklyTechnique) {
+            return;
+        }
+
+        // from https://stackoverflow.com/a/34323944
+        var date = new Date();
+        date.setHours(0, 0, 0, 0);
+        // Thursday in current week decides the year.
+        date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+        // January 4 is always in week 1.
+        var week1 = new Date(date.getFullYear(), 0, 4);
+        // Adjust to Thursday in week 1 and count number of weeks from date to week1.
+        var weekNo =1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+        var year = date.getFullYear();
+
+        //console.log("Week: " + weekNo + ", Year: " + date.getFullYear());
+
+        var thisWeek = weeklyTechnique.find( it => it.year == year && it.week == weekNo );
+        
+        var tech;
+        if (thisWeek && thisWeek.technique) {
+            tech = thisWeek.technique;
+        } else {
+            // or random?
+            tech = weeklyTechnique[0].technique;
+        }
+
+        var parts = tech.split('-');
+
+        var fixName = AikiSempai.services.utils.fixName;
+        $(document.querySelector('#weekly-waza')).text(fixName(parts[0]));
+        $(document.querySelector('#weekly-attaque')).text(fixName(parts[1]));
+        $(document.querySelector('#weekly-technique')).text(fixName(parts[2]));
+        if (parts[3]) {
+            $(document.querySelector('#weekly-extra')).text(fixName(parts[3]));
+        } else {
+            $(document.querySelector('#weekly-extra')).hide();
+        }
+
+        var found = aikiCatalog.catalogue.find(it => it.id == tech);
+        if (found && found.youtube) {
+            $(document.querySelector('#play-weekly')).click(function(ev) {
+                AikiSempai.services.video.play(found.youtube);
+            });
+        } else {
+            $(document.querySelector('#play-weekly')).hide();
+        }
+
     },
 
     searchPage: function (page) {
@@ -39,15 +108,7 @@ myApp.controllers = {
 
         var infiniteList = page.querySelector('#search-results-list');
 
-        var fixName = function (s) {
-            if (!s) {
-                return '';
-            }
-
-            s = s.replace(/_/g, ' ');
-
-            return s.charAt(0).toUpperCase() + s.slice(1);
-        };
+        var fixName = AikiSempai.services.utils.fixName;
 
         var createListItem = function (c) {
             if (!c) {
@@ -67,7 +128,7 @@ myApp.controllers = {
             var subtitle = fixName(c.waza) + (c.kyu ? ' - ' + c.kyu + (c.kyu == 1 ? 'er' : 'e') + ' kyu' : '');
 
             return ons.createElement([
-                '<ons-list-item', (hasVideo ? ' tappable onclick="myApp.services.video.play(\'' + c.youtube + '\')"' : ''), '>',
+                '<ons-list-item', (hasVideo ? ' tappable onclick="AikiSempai.services.video.play(\'' + c.youtube + '\')"' : ''), '>',
                 '<div class="left">',
                 '<img class="list-item__thumbnail" src="img/list_icon/' + c.technique + '.png">',
                 '</div>',

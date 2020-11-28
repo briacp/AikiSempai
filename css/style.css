@@ -1,6 +1,18 @@
 /*****************
  *** Custom CSS ***
  *****************/
+#weekly-detail {
+  margin-top: 4rem;
+}
+
+#weekly-detail h3 {
+  font-weight: 600;
+}
+
+#weekly-waza {
+  font-size: 18px;
+}
+
 .noresults {
   text-align:center;
   margin: 1rem;

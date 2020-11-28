@@ -2,11 +2,11 @@
  * App Services. This contains the logic of the application organised in modules/objects. *
  ***********************************************************************************/
 
-myApp.services = {
+AikiSempai.services = {
 
     video: {
         play: function(videoId, title) {
-            var youtube = myApp.ytPlayer;
+            var youtube = AikiSempai.ytPlayer;
 
             $("#modal-yt").show();
 
@@ -15,8 +15,20 @@ myApp.services = {
             youtube.loadVideoById(videoId);
         },
         close: function() {
-            myApp.ytPlayer.stopVideo();
+            AikiSempai.ytPlayer.stopVideo();
             $("#modal-yt").hide();
+        }
+    },
+
+    utils: {
+        fixName: function (s) {
+            if (!s) {
+                return '';
+            }
+
+            s = s.replace(/_/g, ' ');
+
+            return s.charAt(0).toUpperCase() + s.slice(1);
         }
     },
 

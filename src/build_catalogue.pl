@@ -88,7 +88,7 @@ while (<$tsv>) {
     my ( $waza, $attaque, $technique, $extra, $tag, $kyu_ffaaa, $youtube, $start_frame, $end_frame, $index ) =
       split( /,/, $_ );
 
-    next unless $waza && $attaque && $technique;
+    next unless $technique;
     next unless $kyu_ffaaa;
 
     my $kyu_ffab = undef;

@@ -8,28 +8,30 @@
         <div class="center">Aiki Sempai</div>
     </ons-toolbar>
 
-    <div style="text-align:center">
-        <img src="img/logo_rect_texte.png" style="max-width:90%" />
-    </div>
+    <ons-card>
+        <img src="img/title_512.png" alt="Aiki Sempai" style="max-width:90%">
+        <!--
+        <div class="title">
+          Bienvenue&nbsp;!
+        </div>
+        -->
+        <div class="content">
 
-    <div class="credits">
-        Vidéos&nbsp;: Patrice Clergeau, Agathe Lescos, Aurélien Yvart<br/>
-        Conception&nbsp;: Briac Pilpré<br/>
-        Dojo&nbsp;: <a href="https://avironbayonnaisaikido.org/">Aïkido Aviron Bayonnais</a>
-        <hr />
-        Les vidéos proposées sont seulement un aide-mémoire pour la révision des techniques
-        et la préparation des grades kyus. Il ne s'agit pas de référence pédagogique.
-        <hr>
-        <div id="catalog-info">-</div>
-        <hr/>
-        <strong>v.1.0.0</strong>
-    </div>
+            <!-- TODO -->
+            <p></p>
 
-    <!--
-    <ons-tabbar id="tabbar" position="auto">
-        <ons-tab page="html/search.html" label="Recherche"></ons-tab>
-        <ons-tab page="html/prepa.html" label="Révision"></ons-tab>
-    </ons-tabbar>
-    -->
+            <ons-button pageLink="html/search.html" modifier="large">Recherche</ons-button>
+            <p></p>
+            <ons-button pageLink="html/weekly.html" modifier="large">Technique de la semaine</ons-button> 
+            <p></p>
+            <ons-button pageLink="html/prepa.html" modifier="large">Préparation grade</ons-button>
 
+        </div>
+      </ons-card>
+
+<!--
+    <ons-fab position="bottom right">
+        <ons-icon id="fabSearch" icon="md-search"></ons-icon>
+    </ons-fab>
+-->
 </ons-page>
