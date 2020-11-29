@@ -4,6 +4,7 @@
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#6FC3E7",
+    "orientation": "portrait",
     "description": "Aide mémoire des techniques d'aïkido",
     "icons": [
         { "src": "/aikisempai/img/ico/icon.29.png", "sizes": "29x29", "type": "image/png" },

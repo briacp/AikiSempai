@@ -10,27 +10,32 @@
 
     <div class="content">
 
-        <div style="text-align:center;">
-            <h2>Technique de la semaine</h2>
-
-            <div id="weekly-detail" style="margin-top: 4rem; font-weight: 600;">
-                <h3 id="weekly-waza" style="font-size:18px">Tachi waza</h3>
-                <h3 id="weekly-attaque">Ai hanmi katate dori</h3>
-                <h3 id="weekly-technique">Ikkyo</h3>
-                <h3 id="weekly-extra">Omote</h3>
-
-                <ons-button id="play-weekly">
-                    <ons-icon icon="md-play"></ons-icon>
-                    <!--En vidéo-->
-                </ons-button>
+        <ons-card>
+            <div class="card-title">
+                <h2>Technique de la semaine</h2>
             </div>
+            <div class="card-content">
+                <div id="weekly-detail">
+                    <h3 id="weekly-waza" style="font-size:18px">Tachi waza</h3>
+                    <h3 id="weekly-attaque">Ai hanmi katate dori</h3>
+                    <h3 id="weekly-technique">Ikkyo</h3>
+                    <h3 id="weekly-extra">Omote</h3>
+                    <p></p>
+                    <ons-button id="play-weekly">
+                        <ons-icon icon="md-play"></ons-icon>
+                        Vidéo
+                    </ons-button>
+                </div>
 
-<!--
-            <ons-fab id="play-weekly" position="bottom center">
-                <ons-icon icon="md-play"></ons-icon>
-            </ons-fab>
--->
-        </div>
+                <hr style="margin:2rem 0;"/>
+
+                <p>
+                    Filmez-vous et partagez vos progrès avec nous&nbsp;:<br />
+                    <strong>#aikisempai #semaine<span id="weekno"></span></strong>
+                </p>
+
+            </div>
+        </ons-card>
 
     </div>
 </ons-page>

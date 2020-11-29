@@ -60,7 +60,9 @@ AikiSempai.controllers = {
         //console.log("Week: " + weekNo + ", Year: " + date.getFullYear());
 
         var thisWeek = weeklyTechnique.find( it => it.year == year && it.week == weekNo );
-        
+
+        $(document.querySelector('#weekno')).text(weekNo);
+
         var tech;
         if (thisWeek && thisWeek.technique) {
             tech = thisWeek.technique;

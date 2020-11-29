@@ -13,6 +13,10 @@
   font-size: 18px;
 }
 
+.card-title, .card-content {
+  text-align: center;
+}
+
 .noresults {
   text-align:center;
   margin: 1rem;
