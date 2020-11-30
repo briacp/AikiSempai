@@ -29,6 +29,12 @@ AikiSempai.services = {
             s = s.replace(/_/g, ' ');
 
             return s.charAt(0).toUpperCase() + s.slice(1);
+        },
+        splitterSetup: function(page) {
+            // Set button functionality to open/close the menu.
+            page.querySelector('[component="button/menu"]').onclick = function () {
+                document.querySelector('#splitter').left.toggle();
+            };
         }
     },
 

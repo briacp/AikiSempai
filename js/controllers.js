@@ -5,10 +5,7 @@
 
 AikiSempai.controllers = {
     homePage: function (page) {
-        // Set button functionality to open/close the menu.
-        page.querySelector('[component="button/menu"]').onclick = function () {
-            document.querySelector('#splitter').left.toggle();
-        };
+        AikiSempai.services.utils.splitterSetup(page);
 
         Array.prototype.forEach.call(page.querySelectorAll('[pagelink]'), function (element) {
             element.onclick = function () {
@@ -20,10 +17,7 @@ AikiSempai.controllers = {
     },
 
     aboutPage: function (page) {
-        // Set button functionality to open/close the menu.
-        page.querySelector('[component="button/menu"]').onclick = function () {
-            document.querySelector('#splitter').left.toggle();
-        };
+        AikiSempai.services.utils.splitterSetup(page);
 
         if (aikiCatalog.catalogue) {
             var videos = aikiCatalog.catalogue
@@ -35,12 +29,7 @@ AikiSempai.controllers = {
     },
 
     weeklyPage: function (page) {
-        //AikiSempai.services.utils.setupMenu(page);
-
-        // Set button functionality to open/close the menu.
-        page.querySelector('[component="button/menu"]').onclick = function () {
-            document.querySelector('#splitter').left.toggle();
-        };
+        AikiSempai.services.utils.splitterSetup(page);
 
         if (!weeklyTechnique) {
             return;
@@ -95,9 +84,7 @@ AikiSempai.controllers = {
     },
 
     searchPage: function (page) {
-        page.querySelector('[component="button/menu"]').onclick = function () {
-            document.querySelector('#splitter').left.toggle();
-        };
+        AikiSempai.services.utils.splitterSetup(page);
 
         $(document.querySelector("#search-results-title")).hide();
 
@@ -270,9 +257,17 @@ AikiSempai.controllers = {
     },
 
     prepaKyuPage: function (page) {
-        page.querySelector('[component="button/menu"]').onclick = function () {
-            document.querySelector('#splitter').left.toggle();
+        AikiSempai.services.utils.splitterSetup(page);
+
+        return;
+
+        var intervalText = function() {
+            var int = $(document.querySelector('#interval')).val();
+            $(document.querySelector('#interval-txt')).text(int + " secondes");
         };
+
+        $(document.querySelector('#interval')).change(intervalText);
+        intervalText();
     },
 
     ////////////////////////

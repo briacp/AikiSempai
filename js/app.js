@@ -24,7 +24,7 @@ window.onYouTubeIframeAPIReady = function() {
     playerWidth: '100%',
     playerVars: {
       controls: 1,
-      loop: 1,
+      loop: 0,
       modestbranding: 1,
       rel: 0  // limit the suggestions to the current channel
     },
